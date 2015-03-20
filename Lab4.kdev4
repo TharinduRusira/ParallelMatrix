@@ -1,0 +1,4 @@
+[Project]
+Name=Lab4
+Manager=KDevCMakeManager
+VersionControl=kdevgit
