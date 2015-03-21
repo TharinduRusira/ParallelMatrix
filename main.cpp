@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
+#include "mat_utils.h"
 
 #define N 10
 
