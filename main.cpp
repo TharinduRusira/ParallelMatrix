@@ -6,16 +6,16 @@
 
 using namespace std;
 
-float** rand_mat_gen(size_t n)
+double** rand_mat_gen(size_t n)
 {
-  float **mat =  (float**)malloc(N*sizeof(float*));
+  double **mat =  (double**)malloc(N*sizeof(double*));
 	int i,j;
 	srand(time(NULL)); // seed the pseudo-random generator
 	for(i=0;i<n;i++){
-		mat[i] = (float*)malloc(n*sizeof(float));
+		mat[i] = (double*)malloc(n*sizeof(double));
 		for(j=0;j<n;j++){
 			int number = rand();
-			mat[i][j] = (float)number/(float)pow((double)10,(number%10));
+			mat[i][j] = number/pow((double)10,(number%10));
 			cout << mat[i][j] << "\t";
 		}
 		cout << endl;
@@ -25,6 +25,6 @@ float** rand_mat_gen(size_t n)
 
 
 int main(int argc, char **argv) {
-    
+    rand_mat_gen(5);
     return 0;
 }
