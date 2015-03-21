@@ -1,18 +1,43 @@
-double** mat_mul_simple(size_t N, double** A,double** B)
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+#include <math.h>
+
+using namespace std;
+
+double** rand_mat_gen(size_t n)
 {
-  double** c = (double**)malloc(N*sizeof(double*));
+  double **mat =  (double**)malloc(n*sizeof(double*));
+	int i,j;
+	srand(time(NULL)); // seed the pseudo-random generator
+	for(i=0;i<n;i++){
+		mat[i] = (double*)malloc(n*sizeof(double));
+		for(j=0;j<n;j++){
+			int number = rand();
+			mat[i][j] = number/pow((double)10,(number%10));
+			cout << mat[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	return mat;
+}
+
+
+double** mat_mul_simple(size_t n, double** A,double** B)
+{
+  double** c = (double**)malloc(n*sizeof(double*));
   
   double** matA = A;
   double** matB = B;
   clock_t start = clock();
   
-  for(int i=0;i<N;i++)
+  for(int i=0;i<n;i++)
   {
-    c[i] = (double*)malloc(M1*sizeof(double));
-    for(int j=0;j<M1;j++)
+    c[i] = (double*)malloc(n*sizeof(double));
+    for(int j=0;j<n;j++)
     {
 	c[i][j]=0;
-	for(int k=0;k<M2;k++)
+	for(int k=0;k<n;k++)
 	{
 	  c[i][j]+= matA[i][k]*matB[k][j];
 	}
