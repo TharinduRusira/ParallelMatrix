@@ -9,6 +9,4 @@ add_library(lab4_lib STATIC mat_utils.cpp)
 
 target_link_libraries(lab4 lab4_lib)
 
-
-
-
+set(CMAKE_CXX_FLAGS "-std=gnu++11 -fopenmp")
