@@ -1,8 +1,11 @@
-# Exploiting hardware parallelization to optimize Matrix Multiplication problem
-## Tharindu Rusira, Chalitha Perera <-
-### Department of Computer Science and Engineering
-### University of Moratuwa
-### Sri Lanka
+## Exploiting hardware parallelization to optimize Matrix Multiplication problem
+<p>
+**Tharindu Rusira, Chalitha Perera** <br/>
+*Department of Computer Science and Engineering*<br />
+*University of Moratuwa* <br />
+*Sri Lanka*<br />
+<hr>
+<p/>
 <br /> <br />
 ## Compiling the code
 
