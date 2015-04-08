@@ -6,20 +6,13 @@
 *Sri Lanka*<br />
 <hr>
 <p/>
-<br /> <br />
+<br />
 ## Compiling the code
 
 This project uses Cmake utility to compile the code and build necessary libraries. 
-Navigate to lab4/build directory and run "make".
-
-`~/Lab4/build make`
+Download the repository, navigate to 'build' directory and run 'make'.
 
 If everything goes well, an executable file with the name "lab4" will be generated.
-
-  `[ 50%] Built target lab4_lib`
-
-  `[100%] Built target lab4`
-
 
 ## Executing Compiled Program
 
