@@ -9,6 +9,7 @@ using namespace std::chrono;
 
 const int NUM_THREADS = 4;
 
+// generate random matrices
 double** rand_mat_gen(size_t n)
 {
   double **mat =  (double**)malloc(n*sizeof(double*));
@@ -25,7 +26,7 @@ double** rand_mat_gen(size_t n)
   return mat;
 }
 
-
+// serial matrix multiplication algorithm
 double** mat_mul_simple(size_t n, double** A,double** B)
 {
   double** c = (double**)malloc(n*sizeof(double*));
@@ -55,6 +56,7 @@ double** mat_mul_simple(size_t n, double** A,double** B)
   
 }
 
+// parallelized matrix multiplication algorithm
 double** mat_mut_parallel(size_t N, double** A, double** B)
 {
   double** C = (double**)malloc(N*sizeof(double*));
@@ -66,6 +68,7 @@ double** mat_mut_parallel(size_t N, double** A, double** B)
   
   high_resolution_clock::time_point start = high_resolution_clock::now();
 
+  // parallel loop begins here
  #pragma omp parallel for num_threads(NUM_THREADS) default(none) shared(A,B,C,N) private(i,j,k)
   for(i=0;i<N;i++)
   {
@@ -84,6 +87,7 @@ double** mat_mut_parallel(size_t N, double** A, double** B)
   return C;
 }
 
+// optimized matrix multiplication algorithm using B transpose to increase cache hits
 double** mat_mul_opt_transpose(size_t N, double** A, double** B)
 {
   int i,j,k;
